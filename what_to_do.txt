@@ -1,4 +1,4 @@
-import and export in ES6 ,
+import and export and export default in ES6 ,
 object literals,
 let, const, arrow function, callback function
 make three Components (Header, footer, main) and render them. 
