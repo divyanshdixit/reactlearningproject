@@ -1,20 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'; // use html element
+import ReactDOM from 'react-dom'; // dom manupulation
 import './index.css';
 import App from './App';
 import FirstComponent from './firstComponent';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  // <React.StrictMode>
+const name = "Divyansh";
+// let fname = "div";
+// let lname = "Dixit";
+const styleObj =  {
+  color:'red',
+  textTransform: 'capitalize'
+}
+
+if(false){
+  var f = "something"
+}else if(true){
+  var f = "third";
+}else{
+  var f = "second"
+}
+
+const currentDate = new Date().toLocaleString();
+ReactDOM.render( //
   <>
-    <App />
-    <FirstComponent />
-    <FirstComponent />
-    <FirstComponent />
-  </>
-  // </React.StrictMode>
-  ,
+    <h1 style= {styleObj}> { `My name is ${name}`} </h1>
+    <p> Date and time is {currentDate} </p>
+    <p> Welcome {name},  {f} </p>
+  </>,
   document.getElementById('root')
 );
 
