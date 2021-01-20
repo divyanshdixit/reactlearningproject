@@ -1,18 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Example from './components/Example';
-import * as Obj from './components/ExpoImpo';
+import Books from './Components/Books';
+import Res from './Components/Restaurant'
 
-function App() {
+const x = 10;
+
+function App() { // functional component
   return (
-    <div className="App">
-
-      <Example/>
-      {Obj.default}
-      {Obj.firstName()}
-      {Obj.lastName()}
-      {Obj.secondValue}
-    </div>
+    <>
+      <h1> Hello {x} </h1>
+      <Books/> 
+      <Res/>
+    </>
   );
 }
 
