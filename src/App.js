@@ -2,6 +2,9 @@
 import './App.css';
 import Books from './Components/Books';
 import Food from './Components/Food';
+import FirstClassCompo from './Components/ClassComponentEx';
+import WithConstructor from './Components/ClassCompoWithConstructor';
+import UseStateHook from './Components/UseStateHook';
 
 const x = 10;
 var check = 'veg';
@@ -12,13 +15,18 @@ var check = 'veg';
 //   console.log('not checked');
 // }
 
-function App() { // functional component
+// 16.8 => Hooks => state, props  useState(), lifecycle methods
+function App() { // functional component, dumb, 
   return (
     <>
       <h1> Hello {x} </h1>
+      <WithConstructor age="25"/>
+      <FirstClassCompo age="24"/>
       <Food category={check}/>
       <Books bookname="book1" authorname="author1" />
       <Books bookname="book2" authorname="author2"/>
+
+      <UseStateHook/>
     </>
   );
 }
