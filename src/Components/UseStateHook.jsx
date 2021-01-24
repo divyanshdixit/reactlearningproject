@@ -11,10 +11,10 @@ import React, { useState } from 'react';
 
 const UseStateHook = () => {
     
-    var git  = useState('divyansh'); // return [stateVlaue, updateState]
+    var [name, setName]  = useState('divyansh'); // return [stateVlaue, updateState]
 
-    function ChangeValue(params) {
-        name = "New Value";
+    function ChangeValue() {
+        name =  "New Value";
         setName(name);
     }
 

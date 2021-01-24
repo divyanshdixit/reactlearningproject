@@ -4,7 +4,10 @@ import Books from './Components/Books';
 import Food from './Components/Food';
 import FirstClassCompo from './Components/ClassComponentEx';
 import WithConstructor from './Components/ClassCompoWithConstructor';
-import UseStateHook from './Components/UseStateHook';
+// import UseStateHook from './Components/UseStateHook';
+import DigitalClock from './Components/DigitalClock';
+import ClockDigital from './Components/ClockDigital';
+import Counter from './Components/Counter';
 
 const x = 10;
 var check = 'veg';
@@ -19,6 +22,8 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
+
+    <ClockDigital/>
       <h1> Hello {x} </h1>
       <WithConstructor age="25"/>
       <FirstClassCompo age="24"/>
@@ -26,7 +31,12 @@ function App() { // functional component, dumb,
       <Books bookname="book1" authorname="author1" />
       <Books bookname="book2" authorname="author2"/>
 
-      <UseStateHook/>
+      {/* <UseStateHook/> */}
+
+      <DigitalClock/>
+
+      <Counter/>
+
     </>
   );
 }
