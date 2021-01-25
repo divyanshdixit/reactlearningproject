@@ -8,6 +8,7 @@ import WithConstructor from './Components/ClassCompoWithConstructor';
 import DigitalClock from './Components/DigitalClock';
 import ClockDigital from './Components/ClockDigital';
 import Counter from './Components/Counter';
+import ReactForm from './Components/ReactForms';
 
 const x = 10;
 var check = 'veg';
@@ -24,6 +25,8 @@ function App() { // functional component, dumb,
     <>
 
     <ClockDigital/>
+
+    <ReactForm/>
       <h1> Hello {x} </h1>
       <WithConstructor age="25"/>
       <FirstClassCompo age="24"/>
