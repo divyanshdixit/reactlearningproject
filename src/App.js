@@ -10,6 +10,8 @@ import ClockDigital from './Components/ClockDigital';
 import Counter from './Components/Counter';
 // import ReactForm from './Components/ReactForms';
 import Forms from './Components/FormsReact';
+import Form2 from './Components/FormsReact2';
+import Form3 from './Components/FormsReact3';
 
 const x = 10;
 var check = 'veg';
@@ -24,6 +26,10 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
+
+    <Form3/>
+    
+    <Form2/>
 
     <Forms/>
 

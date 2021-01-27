@@ -1,32 +1,30 @@
 import React, {useState} from 'react';
 
+const Form1 = () => {
 
-// controlled compo, uncontrolled compo 
+    // controlled component => form elem controlled by react compon , 'single source of truth'
+    const [state, updateState] = useState('');
+    
+    const [data, updateData] = useState('');
 
-const Forms = () => {
-
-    const [initV, updateValue] = useState("");
-    const [names, updateNames] = useState();
-
-    function changeValue(e){
-        updateValue(e.target.value);
+    function changeEvent(event) {
+        // console.log(event.target.value);
+        var val = event.target.value
+        updateState(val);
     }
 
-    function clickEvent(){
-        updateNames(initV);
-       updateValue('');
-        
+    function clickEvent(event) {
+        updateData(state)
     }
+
     return(
         <>
-        <form >
-        <h1> Hello {names} </h1>
-            <input type="text" placeholder="Enter text here" value={initV} onChange={changeValue} />  
-            <button type="submit" onClick={clickEvent}> Submit value</button>
-        </form>
-            
+            <h1> Form 1 data show here {state} </h1>
+            <h2> Submitted data will show here {data} </h2>
+            <input type="text" name="text" placeholder="Enter your input" onChange={changeEvent} value={state}/> 
+            <button type="button" onClick={clickEvent}> Submit </button>
         </>
     )
 }
 
-export default Forms;
+export default Form1;
