@@ -12,6 +12,8 @@ import Counter from './Components/Counter';
 import Forms from './Components/FormsReact';
 import Form2 from './Components/FormsReact2';
 import Form3 from './Components/FormsReact3';
+import Counters from './Components/Counters';
+import ToDoApp from './Components/ToDoApp';
 
 const x = 10;
 var check = 'veg';
@@ -26,6 +28,9 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
+    <ToDoApp/>
+
+    <Counters/>
 
     <Form3/>
     
