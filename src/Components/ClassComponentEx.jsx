@@ -7,7 +7,6 @@ class FirstClassCompo extends Component{
         name:'divyansh',
         city:'kanpur' ,
         agevalue:this.props.ages
-
     }
     
    render(){

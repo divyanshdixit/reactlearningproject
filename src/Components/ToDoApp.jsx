@@ -53,7 +53,7 @@ const ToDoApp = () => {
 
             <ol>
                 {lists.map( (val, index) => {
-                    return <ItemLists val={val} key={index} id={index} onSelect={deleteItems}/>
+                    return <ItemLists val={val} key={index} id={index} onClick={deleteItems}/>
                 })}
             </ol>
         </>

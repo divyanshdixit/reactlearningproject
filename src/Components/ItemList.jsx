@@ -6,9 +6,7 @@ const ItemLists = (props) => {
     }
     return(
         <>
-            <li id={props.id} onClick={ () => {
-                        props.onSelect(props.id)
-                    }}> 
+            <li id={props.id} onClick={ () => props.onClick(props.id)}> 
                 {props.val} 
             </li>
         </>
