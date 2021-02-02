@@ -1,32 +1,56 @@
 import React, {useState} from 'react';
 
-
-// two type of compopnent = > controlled , uncontrolled
-
-// controlled > an input form element whose value is controlled by react 
-
 const ReactForm = () => {
 
-    const [state, updateState] = useState("");
-    const [initValue, updateValue] = useState();
+    // useState({}) => userState can taken object, array, number , string
+    const [user, setuser] = useState({
+        fname: '',
+        lname : '',
+        email : ''
+    }) 
 
-    function getValue(event) {
-        console.log(event.target.value);
-        updateState(event.target.value);
+    const changeEvent = (e) => {
+        var name = e.target.name;
+        var val = e.target.value;
+
+        // setState( (prev) => {})
+        if(name === 'fname'){
+            setuser( (prev) => ({
+                fname: val,
+                lname : prev.lname,
+                email : prev.email
+                })
+            )
+        }else if(name === 'lname'){
+            setuser( (prev) => ({
+                fname: prev.fname,
+                lname : val,
+                email : prev.email
+                })
+            )
+        }else if(name === 'email'){
+            setuser( (prev) => ({
+                fname: prev.fname,
+                lname : prev.lname,
+                email : val
+                })
+            )
+        }
     }
 
-    function onSubmit(event) {
-        updateValue(state);
-        updateState('');
+    const clickEvent = () => {
+        
     }
 
     return(
         <>
-          <h1> Hello {initValue} </h1>  
-          <input type="text" className="user_input" placeholder="Enter text" value={state} onChange={getValue} />
-          <button type="button" onClick={onSubmit}> Submit </button> 
+            <h1> React form {user.fname} {user.lname} {user.email} </h1>
+            <h1> React form values  </h1>
+            <input type="text" placeholder="enter your fname" name="fname" value={user.fname} onChange={changeEvent}/>
+            <input type="text" placeholder="enter your lname" name="lname" value={user.lname} onChange={changeEvent}/>
+            <input type="text" placeholder="enter your email" name="email" value={user.email} onChange={changeEvent}/>
+            <button type="button"onClick={clickEvent}> Submit </button>
         </>
-
     )
 }
 

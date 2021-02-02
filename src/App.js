@@ -9,7 +9,7 @@ import WithConstructor from './Components/ClassCompoWithConstructor';
 import DigitalClock from './Components/DigitalClock';
 import ClockDigital from './Components/ClockDigital';
 import Counter from './Components/Counter';
-// import ReactForm from './Components/ReactForms';
+import ReactForm from './Components/ReactForms';
 import Forms from './Components/FormsReact';
 import Form2 from './Components/FormsReact2';
 import Form3 from './Components/FormsReact3';
@@ -34,8 +34,10 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
-    <LifeCycleA/>
+    <ReactForm/>
     
+    <LifeCycleA/>
+
     <h1 className={styles.heading}> Hello </h1>
     <PassFunAsProps/>
 
