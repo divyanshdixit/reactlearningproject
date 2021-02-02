@@ -1,0 +1,49 @@
+/*
+
+Mounting -> componnet create and insert in Dom 
+
+updating - Due to change in state or props,  compo in re-rendered
+
+unmounting - when compo is being removed from dom.
+
+error handling - error during render, re-rendering , or constructor of any parent or child 
+
+
+Mounting -> 
+
+    |
+
+    1- Constructor(){} - when element is being created, use of intialize state, or bind the event
+
+    |
+
+    2- static getDerivedStateFromProps(props, state){} - when state are depend on props,
+    // return state object, null 
+
+    |
+
+    3- render(){} - for rendering jsx , dom , or child element , element inserted into dom
+
+    |
+
+    4- componentDidMount(){} - run after element inserted into dom, run only once in lifycycle of component
+
+
+    updating ->  state or props change 
+
+    |
+
+    1- static getDerivedStateFromProps(props, state){}
+
+    2- shouldComponentUpdate(updateProps, updateState){} => return true/false
+
+    3-  render(){} - 
+
+    4- getSnapshotBeforeUpdate(prevProps, prevState){} - return value or null 
+    // if allow compoent to capture th current value
+    // returned value used in componentDidUpdate(prevProps, prevState, value)
+
+    5- componentDidUpdate(){} - run after element is updated bcz of state or props, 
+    // it'll run only when shouldComponentUpdate() method return true.
+
+*/

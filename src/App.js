@@ -19,6 +19,7 @@ import ClassCompoA from './Components/ClassCompoA';
 import BindEventInClass from './Components/BindEventInClass';
 import GetPropAsFun from './Components/GetPropAsFun';
 import PassFunAsProps from './Components/PassFunAsProps';
+import LifeCycleA from './Components/LifeCycleA';
 
 const x = 10;
 var check = 'veg';
@@ -33,6 +34,8 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
+    <LifeCycleA/>
+    
     <h1 className={styles.heading}> Hello </h1>
     <PassFunAsProps/>
 
