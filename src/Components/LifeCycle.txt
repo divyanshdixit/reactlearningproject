@@ -13,7 +13,7 @@ Mounting ->
 
     |
 
-    1- Constructor(){} - when element is being created, use of intialize state, or bind the event
+    1- Constructor(){} - when element is being created, use of intialize state, or bind the event, ref
 
     |
 
@@ -22,14 +22,14 @@ Mounting ->
 
     |
 
-    3- render(){} - for rendering jsx , dom , or child element , element inserted into dom
+    3- render(){} - for rendering jsx , dom , or child element , element inserted into dom, required method in class compo
 
     |
 
     4- componentDidMount(){} - run after element inserted into dom, run only once in lifycycle of component
 
-
-    updating ->  state or props change 
+ating ->
+upd  state or props change 
 
     |
 
@@ -37,7 +37,7 @@ Mounting ->
 
     2- shouldComponentUpdate(updateProps, updateState){} => return true/false
 
-    3-  render(){} - 
+    3-  render(){} - if shouldComponentUpdate return false then render() will not run
 
     4- getSnapshotBeforeUpdate(prevProps, prevState){} - return value or null 
     // if allow compoent to capture th current value

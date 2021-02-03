@@ -2,20 +2,24 @@ import { ThreeSixtySharp } from '@material-ui/icons'
 import React, { Component, PureComponent } from 'react'
 import LifeCycleB from './LifeCycleB'
 
+// parent compo
 class LifeCycleA extends Component {
 
     // first method  
     constructor(props) {
-        super(props)
-    
+        super(props);
+        
+        // state initialise
         this.state = {
              name: 'Divyansh'
         }
-
-        console.log('const method Lifecycle A')
     }
 
-    
+    clickHandler = () => {
+        this.setState({
+            name : 'Abhishek'
+        })
+    } 
 
     // second method
     static getDerivedStateFromProps(props, state){
@@ -23,10 +27,29 @@ class LifeCycleA extends Component {
        console.log('Derived state method Lifecycle A');
        return null;
     }
+
+    // 2nd method for updating
+    shouldComponentUpdate(updateProps, updateState){
+        console.log(updateProps, updateState);
+        return true;
+    }
     
     // fourth method
-    componentDidMount(){
-        console.log('Compoent did mount method');
+
+    // componentDidMount(){
+    //     console.log('Compoent did mount method');
+    // }
+
+    // foruth
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        console.log('Get snap shot method for LC A ')
+        return null;
+    }
+
+    // fifth
+    componentDidUpdate(prevProps, prevState, value){
+        console.log(value)
+        console.log('component updated');
     }
 
     // third method
@@ -34,8 +57,11 @@ class LifeCycleA extends Component {
         console.log('render method Lifecycle A')
         return (
             <div>
-                LifeCycle A 
-                <LifeCycleB/>
+                LifeCycle A
+
+                <button onClick={this.clickHandler}> Change State </button>
+                 {/*child component */}
+                <LifeCycleB name={this.state.name}/>
             </div>
         )
     }

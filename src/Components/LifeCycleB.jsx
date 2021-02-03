@@ -1,6 +1,7 @@
 import { ThreeSixtySharp } from '@material-ui/icons'
 import React, { Component } from 'react'
 
+// child compo
 class LifeCycleB extends Component {
 
     // first method  
@@ -8,23 +9,26 @@ class LifeCycleB extends Component {
         super(props)
     
         this.state = {
-             name: 'Divyansh'
+            name: this.props.name // Divyansh, Abhishek
         }
-
-        console.log('const method Lifecycle B')
     }
 
     // second method
     static getDerivedStateFromProps(props, state){
        console.log(props, state);
-       console.log('Derived state method Lifecycle B');
-       return null;
+       if(props.name !== state.name){
+            return {...props}
+       }else{
+            return null;
+       }
     }
     
     // fourth method
     componentDidMount(){
         console.log('Compoent did mount method Lc B');
     }
+
+    
 
     // third method
     render() {
