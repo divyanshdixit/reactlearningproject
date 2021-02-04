@@ -31,6 +31,9 @@ class LifeCycleA extends Component {
     // 2nd method for updating
     shouldComponentUpdate(updateProps, updateState){
         console.log(updateProps, updateState);
+        if(this.state.name === updateState.name){
+            return false;
+        }
         return true;
     }
     

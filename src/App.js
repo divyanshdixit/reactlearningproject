@@ -20,6 +20,11 @@ import BindEventInClass from './Components/BindEventInClass';
 import GetPropAsFun from './Components/GetPropAsFun';
 import PassFunAsProps from './Components/PassFunAsProps';
 import LifeCycleA from './Components/LifeCycleA';
+import ComponentPure from './Components/PureComponent';
+import MemoComponent from './Components/MemoComponent';
+import RefsComponent from './Components/RefsComponent';
+import RefInClassParent from './Components/RefInClassParent';
+import RefForwardingParent from './Components/RefForwardingParent';
 
 const x = 10;
 var check = 'veg';
@@ -34,6 +39,16 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
+    <RefForwardingParent/>
+
+    <RefInClassParent/>
+
+    <RefsComponent/>
+
+    <MemoComponent/>
+
+    <ComponentPure/>
+
     <ReactForm/>
     
     <LifeCycleA/>
