@@ -6,50 +6,41 @@ const ReactForm = () => {
     const [user, setuser] = useState({
         fname: '',
         lname : '',
-        email : ''
+        email : '',
+        phone:''
     }) 
 
     const changeEvent = (e) => {
-        var name = e.target.name;
-        var val = e.target.value;
+        // var name = e.target.name;
+        // var val = e.target.value;
+        
+        const {name, value} = e.target; // fname
 
         // setState( (prev) => {})
-        if(name === 'fname'){
-            setuser( (prev) => ({
-                fname: val,
-                lname : prev.lname,
-                email : prev.email
-                })
-            )
-        }else if(name === 'lname'){
-            setuser( (prev) => ({
-                fname: prev.fname,
-                lname : val,
-                email : prev.email
-                })
-            )
-        }else if(name === 'email'){
-            setuser( (prev) => ({
-                fname: prev.fname,
-                lname : prev.lname,
-                email : val
-                })
-            )
-        }
+        
+        setuser( (prevState) => {
+            return{
+                ...prevState,
+                [name]:value
+            }
+        } )
     }
 
-    const clickEvent = () => {
-        
+    const submitForm = (event) => {
+        event.preventDefault();
     }
 
     return(
         <>
-            <h1> React form {user.fname} {user.lname} {user.email} </h1>
+            <h1> React form {user.fname} {user.lname} {user.email} {user.phone}</h1>
             <h1> React form values  </h1>
+            <form onSubmit={submitForm}>
             <input type="text" placeholder="enter your fname" name="fname" value={user.fname} onChange={changeEvent}/>
             <input type="text" placeholder="enter your lname" name="lname" value={user.lname} onChange={changeEvent}/>
             <input type="text" placeholder="enter your email" name="email" value={user.email} onChange={changeEvent}/>
-            <button type="button"onClick={clickEvent}> Submit </button>
+            <input type="text" placeholder="enter your phone" name="phone" value={user.phone} onChange={changeEvent}/>
+            <button type="submit"> Submit </button>
+            </form>
         </>
     )
 }
