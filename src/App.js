@@ -1,5 +1,6 @@
 
 import './App.css';
+import React from 'react';
 import styles from './Style.module.css';
 import Books from './Components/Books';
 import Food from './Components/Food';
@@ -25,9 +26,20 @@ import MemoComponent from './Components/MemoComponent';
 import RefsComponent from './Components/RefsComponent';
 import RefInClassParent from './Components/RefInClassParent';
 import RefForwardingParent from './Components/RefForwardingParent';
+import ContextComponentD from './Components/ContextComponentD';
+import TodoAppDemo from './Components/TodoAppDemo';
+// import Provider from './Components/ContextApi';
 
 const x = 10;
+const Uname= "Divyansh"
 var check = 'veg';
+
+
+const NameContext = React.createContext(); // object
+
+// consumer, provider => Component  
+
+const {Provider, Consumer} = NameContext;
 
 // if(check == 'veg'){
 //   console.log('checked');
@@ -39,6 +51,13 @@ var check = 'veg';
 function App() { // functional component, dumb, 
   return (
     <>
+    <TodoAppDemo/>
+
+    {/* responsible for  provding vlaue to all descendent compo */}
+    {/* <Provider value={Uname}>
+      <ContextComponentD/>
+    </Provider> */}
+
     <RefForwardingParent/>
 
     <RefInClassParent/>
@@ -54,7 +73,8 @@ function App() { // functional component, dumb,
     <LifeCycleA/>
 
     <h1 className={styles.heading}> Hello </h1>
-    <PassFunAsProps/>
+
+    <PassFunAsProps check={check}/>
 
     <ClassCompoA id="1"> 
       <p> This is childeren for class compo A </p>
@@ -91,3 +111,5 @@ function App() { // functional component, dumb,
 }
 
 export default App;
+
+export {Provider, Consumer}
