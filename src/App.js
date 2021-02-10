@@ -29,6 +29,12 @@ import RefForwardingParent from './Components/RefForwardingParent';
 import ContextComponentD from './Components/ContextComponentD';
 import TodoAppDemo from './Components/TodoAppDemo';
 // import Provider from './Components/ContextApi';
+import HocClickCounter from './Components/HocClickCounter';
+import HocHoverCounter from './Components/HocHoverCounter';
+import {Switch, Route} from 'react-router-dom';
+import { Home } from './Components/Home';
+import { About } from './Components/Home';
+import { Contact } from './Components/Home';
 
 const x = 10;
 const Uname= "Divyansh"
@@ -51,6 +57,18 @@ const {Provider, Consumer} = NameContext;
 function App() { // functional component, dumb, 
   return (
     <>
+
+    <Switch>
+      <Route path='/' exact component={Home}/>
+      <Route path='/about' exact component={About}/>
+      <Route path='/contact' exact component={Contact}/>
+      <Route component={Error404}/>
+    </Switch>
+
+    <HocClickCounter otherProps="Anything" pop1="jkjkjk"/>
+
+    <HocHoverCounter/>
+
     <TodoAppDemo/>
 
     {/* responsible for  provding vlaue to all descendent compo */}
