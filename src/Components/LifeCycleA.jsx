@@ -1,4 +1,4 @@
-import { ThreeSixtySharp } from '@material-ui/icons'
+// import { ThreeSixtySharp } from '@material-ui/icons'
 import React, { Component, PureComponent } from 'react'
 import LifeCycleB from './LifeCycleB'
 

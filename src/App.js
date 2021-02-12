@@ -33,8 +33,9 @@ import HocClickCounter from './Components/HocClickCounter';
 import HocHoverCounter from './Components/HocHoverCounter';
 import {Switch, Route} from 'react-router-dom';
 import { Home } from './Components/Home';
-import { About } from './Components/Home';
-import { Contact } from './Components/Home';
+import { About } from './Components/About';
+import { Contact } from './Components/Contact';
+import Error404 from './Components/Error404';
 
 const x = 10;
 const Uname= "Divyansh"

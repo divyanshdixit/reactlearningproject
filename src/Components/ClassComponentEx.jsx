@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 // state => private, modify, lifecycle method
+// without constructor 
+
 class FirstClassCompo extends Component{
    
     state = {

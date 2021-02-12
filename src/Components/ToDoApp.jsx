@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
+// import Button from '@material-ui/core/Button';
+// import AddIcon from '@material-ui/icons/Add';
 import ItemLists from './ItemList';
-import { AssignmentIndSharp } from '@material-ui/icons';
+// import { AssignmentIndSharp } from '@material-ui/icons';
 
 const ToDoApp = () => {
 
@@ -47,9 +47,9 @@ const ToDoApp = () => {
         <>
             <h1> To Do List </h1>
             <input type="text" name="item" placeholder="Enter your item name" onChange={changeEvent} value={state.item}/>
-            <Button variant="contained" color="secondary" onClick={addItem}> 
-                <AddIcon/> 
-            </Button>
+            <button className="btn btn-primary" onClick={addItem}> 
+                {/* <AddIcon/>  */} Add
+            </button>
 
             <ol>
                 {lists.map( (val, index) => {
