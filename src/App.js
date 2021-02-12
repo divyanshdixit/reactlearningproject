@@ -36,13 +36,16 @@ import { Home } from './Components/Home';
 import { About } from './Components/About';
 import { Contact } from './Components/Contact';
 import Error404 from './Components/Error404';
+import HookUseEffect from './Components/HookUseEffect';
 
 const x = 10;
 const Uname= "Divyansh"
 var check = 'veg';
 
 
-const NameContext = React.createContext(); // object
+const NameContext = React.createContext(); // object =>return two component 
+const userContext = React.createContext(); // object =>return two component 
+const compoContext = React.createContext();
 
 // consumer, provider => Component  
 
@@ -58,7 +61,7 @@ const {Provider, Consumer} = NameContext;
 function App() { // functional component, dumb, 
   return (
     <>
-
+    <HookUseEffect/>
     <Switch>
       <Route path='/' exact component={Home}/>
       <Route path='/about' exact component={About}/>
@@ -73,9 +76,11 @@ function App() { // functional component, dumb,
     <TodoAppDemo/>
 
     {/* responsible for  provding vlaue to all descendent compo */}
-    {/* <Provider value={Uname}>
-      <ContextComponentD/>
-    </Provider> */}
+    <userContext.Provider value="Divyansh2">
+      <compoContext.Provider value="Component context">
+          <ContextComponentD/>
+      </compoContext.Provider>
+    </userContext.Provider>
 
     <RefForwardingParent/>
 
@@ -131,4 +136,4 @@ function App() { // functional component, dumb,
 
 export default App;
 
-export {Provider, Consumer}
+export {Provider, Consumer, userContext, compoContext}

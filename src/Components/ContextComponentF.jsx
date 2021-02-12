@@ -5,15 +5,8 @@ class ContextComponentF extends Component {
     render() {
         return (
                 <div>
-                    <Consumer>
-                    {
-                        (name) => {
-                            return (<div> Hello {name} </div> )
-                        }
-                    }
+                    
                     Component  F
-                        
-                    </Consumer>
                 </div>
         )
     }
