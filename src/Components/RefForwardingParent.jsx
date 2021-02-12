@@ -6,6 +6,7 @@ class RefForwardingParent extends Component {
     constructor(props) {
         super(props);
         this.childInputRef = React.createRef()
+        // this.childHeadingRef = React.createRef()
     }
     
     clickHandler = () => {
