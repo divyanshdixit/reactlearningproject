@@ -1,4 +1,4 @@
-// use for getting the DOM node in react
+// ref => use for getting the DOM node in react
 
 import React, { Component } from 'react'
 
@@ -9,7 +9,7 @@ class RefsComponent extends Component {
         // 1st step => create ref
 
         this.inputRef = React.createRef();
-        this.headingRef = React.createRef();
+        // this.headingRef = React.createRef();
 
         // create ref using callback function 
 
@@ -28,7 +28,7 @@ class RefsComponent extends Component {
         //     this.ipRef.focus()
         // }
 
-        this.inputRef.current.focus()
+        // this.inputRef.current.focus()
     }
 
     clickHandler = () => {

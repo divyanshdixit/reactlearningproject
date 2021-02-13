@@ -61,6 +61,10 @@ const {Provider, Consumer} = NameContext;
 function App() { // functional component, dumb, 
   return (
     <>
+    <PassFunAsProps check="veg"/>
+    
+    <BindEventInClass/>
+
     <HookUseEffect/>
     <Switch>
       <Route path='/' exact component={Home}/>
@@ -97,8 +101,6 @@ function App() { // functional component, dumb,
     <LifeCycleA/>
 
     <h1 className={styles.heading}> Hello </h1>
-
-    <PassFunAsProps check={check}/>
 
     <ClassCompoA id="1"> 
       <p> This is childeren for class compo A </p>
