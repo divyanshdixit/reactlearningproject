@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import ItemLists from './ItemList';
 // import { AssignmentIndSharp } from '@material-ui/icons';
 
-const ToDoApp = () => {
+const ToDoApp = (props) => {
 
     const [state, setstate] = useState({
         item:''

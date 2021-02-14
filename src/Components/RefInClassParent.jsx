@@ -14,21 +14,28 @@ class RefInClassParent extends Component {
     constructor(props) {
         super(props)
     
-        this.inputRef = React.createRef();
-        console.log(this.inputRef);
+        this.childRef = React.createRef();
+        console.log(this.childRef);
     }
-    
-    clickHandler= () => {
-        console.log(this.inputRef);
-        this.inputRef.current.focusInput()
+
+    clickHandler = () => {
+        console.log(this.childRef);
+        this.childRef.current.focusInput()
+    }
+
+    clickHandler2 = () => {
+        console.log(this.childRef);
+        this.childRef.current.focusInput2()
     }
     
     render() {
         return (
             <div>
                 <h1> Ref in parent </h1>
-                <RefInClassChild ref={this.inputRef}/>
+                <RefInClassChild ref={this.childRef}/>
                 <button onClick={this.clickHandler}> Click me </button>
+
+                <button onClick={this.clickHandler2}> Second Input focus </button>
             </div>
         )
     }

@@ -1,4 +1,6 @@
-// ref => use for getting the DOM node in react
+// ref => use for getting the DOM node in react component 
+
+// ref => can also hold whole instance of class 
 
 import React, { Component } from 'react'
 
@@ -14,8 +16,8 @@ class RefsComponent extends Component {
         // create ref using callback function 
 
         // this.ipRef = null;
-        // this.setipRef = (elem) => {
-        //     this.ipRef = elem
+        // this.setipRef = (element) => {
+        //     this.ipRef = element
         // }
     }
     
@@ -23,6 +25,7 @@ class RefsComponent extends Component {
         
         console.log(this.inputRef);
         console.log(this.headingRef);
+        // console.log(this.ipRef);
 
         // if(this.ipRef){
         //     this.ipRef.focus()
@@ -36,14 +39,14 @@ class RefsComponent extends Component {
     }
 
     render() {
-        console.log(this.inputRef);
-        console.log(this.headingRef);
+        // console.log(this.inputRef);
+        // console.log(this.headingRef);
         return (
             <div>
             {/* 2nd step use */}
                 <h1 ref={this.headingRef}> Refs </h1>
                 <input type="text" ref={this.inputRef} />
-                {/* <input type="text" placeholder="text" ref={this.setinputRef}/> */}
+                {/* <input type="text" placeholder="text" ref={this.setipRef}/> */}
                 <button onClick={this.clickHandler}> Get value </button>
             </div>
         )

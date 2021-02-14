@@ -6,7 +6,7 @@
 
 import React from 'react'
 
-const RefForwardingChild = React.forwardRef((props,refs) => {
+const RefForwardingChild = React.forwardRef( (props,refs) => {
     console.log(refs)
     return (
         <div>
