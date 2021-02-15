@@ -67,8 +67,9 @@ function App() { // functional component, dumb,
 
     <HookUseEffect/>
     <Switch>
-      <Route path='/' exact component={Home}/>
-      <Route path='/about' exact component={About}/>
+      <Route exact path='/' component={Home} />
+      {/* <Route path='/' exact component={Home}/> */}
+      <Route path='/about' exact render={ () => <About name="about"/> }/>
       <Route path='/contact' exact component={Contact}/>
       <Route component={Error404}/>
     </Switch>
