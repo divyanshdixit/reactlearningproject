@@ -22,4 +22,4 @@ const MemoComponent = () => {
     )
 }
 
-export default React.memo(MemoComponent)
+export default React.memo(MemoComponent) // higher order component
