@@ -13,6 +13,7 @@ class LifeCycleA extends Component {
         this.state = {
              name: 'Divyansh'
         }
+        console.log('parent const method')
     }
 
     clickHandler = () => {
@@ -21,14 +22,14 @@ class LifeCycleA extends Component {
         })
     } 
 
-    // second method
+    // second method , 1st method only for updatign phase
     static getDerivedStateFromProps(props, state){
        console.log(props, state);
-       console.log('Derived state method Lifecycle A');
+       console.log('parent Derived state method Lifecycle A');
        return null;
     }
 
-    // 2nd method for updating
+    // // 2nd method for updating
     shouldComponentUpdate(updateProps, updateState){
         console.log(updateProps, updateState);
         if(this.state.name === updateState.name){
@@ -39,25 +40,25 @@ class LifeCycleA extends Component {
     
     // fourth method
 
-    // componentDidMount(){
-    //     console.log('Compoent did mount method');
+    componentDidMount(){
+        console.log('parent Compoent did mount method lifecycle A');
+    }
+
+    // // foruth
+    // getSnapshotBeforeUpdate(prevProps, prevState){
+    //     console.log('Get snap shot method for LC A ')
+    //     return null;
     // }
 
-    // foruth
-    getSnapshotBeforeUpdate(prevProps, prevState){
-        console.log('Get snap shot method for LC A ')
-        return null;
-    }
-
-    // fifth
-    componentDidUpdate(prevProps, prevState, value){
-        console.log(value)
-        console.log('component updated');
-    }
+    // // fifth
+    // componentDidUpdate(prevProps, prevState, value){
+    //     console.log(value)
+    //     console.log('component updated');
+    // }
 
     // third method
-    render() {
-        console.log('render method Lifecycle A')
+    render() { // jsx 
+        console.log('parent render method Lifecycle A')
         return (
             <div>
                 LifeCycle A

@@ -11,10 +11,12 @@ class LifeCycleB extends Component {
         this.state = {
             name: this.props.name // Divyansh, Abhishek
         }
+        console.log('child const method')
     }
 
     // second method
     static getDerivedStateFromProps(props, state){
+        console.log('child dervied state method lifecycle B')
        console.log(props, state);
        if(props.name !== state.name){
             return {...props}
@@ -25,14 +27,14 @@ class LifeCycleB extends Component {
     
     // fourth method
     componentDidMount(){
-        console.log('Compoent did mount method Lc B');
+        console.log('child Compoent did mount method Lc B');
     }
 
     
 
     // third method
     render() {
-        console.log('render method Lifecycle B')
+        console.log('child render method Lifecycle B')
         return (
             <div>
                 LifeCycle B 

@@ -99,7 +99,7 @@ function App() { // functional component, dumb,
 
     <ReactForm/>
     
-    <LifeCycleA/>
+    <LifeCycleA name="prop"/>
 
     <h1 className={styles.heading}> Hello </h1>
 

@@ -26,24 +26,45 @@ Mounting ->
 
     |
 
-    4- componentDidMount(){} - run after element inserted into dom, run only once in lifycycle of component
+    4- componentDidMount(){} - run after element inserted into dom, run only once in lifycycle of that component
 
-ating ->
-upd  state or props change 
+
+updating ->  state or props change 
 
     |
 
-    1- static getDerivedStateFromProps(props, state){}
+    1- static getDerivedStateFromProps(props, state){} => return state object or null.
 
     2- shouldComponentUpdate(updateProps, updateState){} => return true/false
+    by defualt it reutrns true
 
     3-  render(){} - if shouldComponentUpdate return false then render() will not run
 
     4- getSnapshotBeforeUpdate(prevProps, prevState){} - return value or null 
-    // if allow compoent to capture th current value
+    // called right before the virtual dom is about tp make change in actual dom.
+
+    // it allow compoent to capture th current value
     // returned value used in componentDidUpdate(prevProps, prevState, value)
 
-    5- componentDidUpdate(){} - run after element is updated bcz of state or props, 
+    5- componentDidUpdate(prevProps, prevState, value){} - run after element is updated bcz of state or props, 
     // it'll run only when shouldComponentUpdate() method return true.
 
-*/
+    used for : 
+    ajax request,
+    Dom or state update,
+    api call made in it,
+    use delay in it like: var interval = setTimeout(() => console.log('timeout'), 1000), setInterval(callback , time)
+
+
+unmounting -> 
+
+componentWillUnmount(){} -> run after when compoent unmounted
+
+clearInterval(interval)
+
+
+Error handling-> 
+
+static getDerivedErrorFromProps(error, info){}
+
+componentDidCatch(){}
