@@ -42,14 +42,14 @@ const x = 10;
 const Uname= "Divyansh"
 var check = 'veg';
 
-
-const NameContext = React.createContext(); // object =>return two component 
+// 1st step
+// const NameContext = React.createContext(); // object =>return two component 
 const userContext = React.createContext(); // object =>return two component 
 const compoContext = React.createContext();
 
 // consumer, provider => Component  
 
-const {Provider, Consumer} = NameContext;
+// const {Provider, Consumer} = NameContext;
 
 // if(check == 'veg'){
 //   console.log('checked');
@@ -80,8 +80,9 @@ function App() { // functional component, dumb,
 
     <TodoAppDemo/>
 
+<p> fdsfsdfsd </p>
     {/* responsible for  provding vlaue to all descendent compo */}
-    <userContext.Provider value="Divyansh2">
+    <userContext.Provider value="Divyansh">
       <compoContext.Provider value="Component context">
           <ContextComponentD/>
       </compoContext.Provider>
@@ -139,4 +140,4 @@ function App() { // functional component, dumb,
 
 export default App;
 
-export {Provider, Consumer, userContext, compoContext}
+export {userContext, compoContext}

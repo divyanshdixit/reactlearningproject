@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
-import {Consumer} from '../App';
+import {Consumer, compoContext, userContext} from '../App';
 
 class ContextComponentF extends Component {
     render() {
         return (
-                <div>
-                    
-                    Component  F
-                </div>
+                <userContext.Consumer>
+                    {
+                        (username) => {
+                            return (
+                                <compoContext.Consumer> 
+                                {
+                                    (otherContext) => {
+                                        return <h1> Component F Hello {username} {otherContext}</h1>
+                                    }
+                                }
+                                
+                                
+                                </compoContext.Consumer>
+                            )
+                        }
+                    }
+                </userContext.Consumer>
         )
     }
 }
