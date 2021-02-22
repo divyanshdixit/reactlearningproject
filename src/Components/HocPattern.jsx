@@ -4,11 +4,13 @@
 
 // wrapped component => comp passed as argument
 
-import React from 'react'
+// Hoc is a pattern where function takes a component as an argument & return a new updatedComponent
+
+import React, {Component} from 'react';
 
 const updatedComponent = (OriginalComponent) => {
     
-    class NewComponent extends React.Component{
+    class NewComponent extends Component{
         constructor(props) {
             super(props)
         
