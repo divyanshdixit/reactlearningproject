@@ -16,10 +16,10 @@ const NavBar = () => {
 
             <NavLink exact to='/' activeClassName="active"> Home </NavLink>
             <NavLink exact to='/about' activeClassName="active"> About </NavLink>
-            {/* <NavLink exact to='/services' activeClassName="active"> Services </NavLink> */}
+            <NavLink e  xact to='/services' activeClassName="active"> Services </NavLink>
             <NavLink exact to='/contact' activeClassName="active"> Contact </NavLink>
-            {/* <NavLink exact to='/users' activeClassName="active"> Users </NavLink> */}
-            {/* <NavLink exact to='/search' activeClassName="active"> Search </NavLink> */}
+            <NavLink exact to='/users' activeClassName="active"> Users </NavLink>
+            <NavLink exact to='/search' activeClassName="active"> Search </NavLink>
         </div>
     )
 }

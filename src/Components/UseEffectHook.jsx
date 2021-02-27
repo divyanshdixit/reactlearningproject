@@ -13,7 +13,7 @@ const UseEffectHook = () => {
         document.title = `Now my title is ${count}`
         return () => {
             console.log('object2')
-        }// cleanup function
+        }// cleanup function (work as compnentWillUnmount)
     },[count]) // if pass empty then it'll run for once in starting after render method , as we pass state variable it'll render for only them.
     
     const clickCount = () => {

@@ -72,6 +72,7 @@ function App() { // functional component, dumb,
       <Route path='/about' exact render={ () => <About name="about"/> }/>
       <Route path='/contact' exact component={Contact}/>
       <Route component={Error404}/>
+      <Redirect to='/' />
     </Switch>
 
     <HocClickCounter otherProps="Anything" pop1="jkjkjk"/>
