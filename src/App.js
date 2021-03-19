@@ -31,12 +31,16 @@ import TodoAppDemo from './Components/TodoAppDemo';
 // import Provider from './Components/ContextApi';
 import HocClickCounter from './Components/HocClickCounter';
 import HocHoverCounter from './Components/HocHoverCounter';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect, useHistory} from 'react-router-dom';
 import { Home } from './Components/Home';
 import { About } from './Components/About';
 import { Contact } from './Components/Contact';
 import Error404 from './Components/Error404';
 import HookUseEffect from './Components/HookUseEffect';
+import NavBar from './Components/NavBar';
+import Services from './Components/Services';
+import UsersLists from './Components/UsersLists';
+import UserView from './Components/UserView';
 
 const x = 10;
 const Uname= "Divyansh"
@@ -59,6 +63,7 @@ const compoContext = React.createContext();
 
 // 16.8 => Hooks => state, props  useState(), lifecycle methods
 function App() { // functional component, dumb, 
+  var history = useHistory();
   return (
     <>
     <PassFunAsProps check="veg"/>
@@ -66,14 +71,25 @@ function App() { // functional component, dumb,
     <BindEventInClass/>
 
     <HookUseEffect/>
+
+    <NavBar/>
+
     <Switch>
       <Route exact path='/' component={Home} />
       {/* <Route path='/' exact component={Home}/> */}
-      <Route path='/about' exact render={ () => <About name="about"/> }/>
+      <Route path='/about' render={ () => <About name="Divyansh"/> }/>
+      <Route path='/about-us' component={Home}/>
       <Route path='/contact' exact component={Contact}/>
-      <Route component={Error404}/>
+      <Route path='/services' component={Services}/>
+      <Route exact path='/users' component={UsersLists}/>
+      {/* <Route path='/users/:id/:name/:username' component={ UserView}/> we can also make other component for viewing single user */}
+      <Route path='/users/:id' component={ UserView}/> we can also make other component for viewing single user\
+      {/* <Route component={Error404}/> */}
       <Redirect to='/' />
     </Switch>
+
+    {/* useHistory() hook of React-router-dom */}
+    <button onClick={ () => history.push('/')}> Visit Home Page </button>
 
     <HocClickCounter otherProps="Anything" pop1="jkjkjk"/>
 
@@ -81,7 +97,7 @@ function App() { // functional component, dumb,
 
     <TodoAppDemo/>
 
-<p> fdsfsdfsd </p>
+
     {/* responsible for  provding vlaue to all descendent compo */}
     <userContext.Provider value="Divyansh">
       <compoContext.Provider value="Component context">
