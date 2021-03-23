@@ -41,6 +41,8 @@ import NavBar from './Components/NavBar';
 import Services from './Components/Services';
 import UsersLists from './Components/UsersLists';
 import UserView from './Components/UserView';
+import UseReducerHook from './Components/UseReducerHook';
+import UseReducerHookEx2 from './Components/UseReducerHookEx2';
 
 const x = 10;
 const Uname= "Divyansh"
@@ -66,6 +68,10 @@ function App() { // functional component, dumb,
   var history = useHistory();
   return (
     <>
+    <UseReducerHookEx2/>
+
+    <UseReducerHook/>
+    
     <PassFunAsProps check="veg"/>
     
     <BindEventInClass/>
