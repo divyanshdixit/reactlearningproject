@@ -8,7 +8,6 @@ const UseReducerHookEx2 = () => {
     }
 
     const reducer = (state, action) => {
-        console.log(state.counter);
         switch(action.type){
             case 'increment':
                 return {

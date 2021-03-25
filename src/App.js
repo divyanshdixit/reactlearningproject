@@ -43,6 +43,7 @@ import UsersLists from './Components/UsersLists';
 import UserView from './Components/UserView';
 import UseReducerHook from './Components/UseReducerHook';
 import UseReducerHookEx2 from './Components/UseReducerHookEx2';
+import UseReducerFetchData from './Components/UseReducerFetchData';
 
 const x = 10;
 const Uname= "Divyansh"
@@ -68,6 +69,8 @@ function App() { // functional component, dumb,
   var history = useHistory();
   return (
     <>
+    <UseReducerFetchData/>
+    
     <UseReducerHookEx2/>
 
     <UseReducerHook/>
