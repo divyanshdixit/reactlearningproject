@@ -44,8 +44,11 @@ import UserView from './Components/UserView';
 import UseReducerHook from './Components/UseReducerHook';
 import UseReducerHookEx2 from './Components/UseReducerHookEx2';
 import UseReducerFetchData from './Components/UseReducerFetchData';
+import UseReducerWithUseContext from './Components/UseReducerWithUseContext';
 
 const x = 10;
+const count = 0;
+
 const Uname= "Divyansh"
 var check = 'veg';
 
@@ -53,6 +56,9 @@ var check = 'veg';
 // const NameContext = React.createContext(); // object =>return two component 
 const userContext = React.createContext(); // object =>return two component 
 const compoContext = React.createContext();
+
+// make a new context for Reducer with Context:
+const countContext = React.createContext();
 
 // consumer, provider => Component  
 
@@ -69,6 +75,13 @@ function App() { // functional component, dumb,
   var history = useHistory();
   return (
     <>
+    <countContext.Provider value={{
+      countState:0,
+      countDispatch:dispatch
+    }}>
+      <UseReducerWithUseContext/>
+    </countContext.Provider>
+
     <UseReducerFetchData/>
     
     <UseReducerHookEx2/>
@@ -107,7 +120,7 @@ function App() { // functional component, dumb,
     <TodoAppDemo/>
 
 
-    {/* responsible for  provding vlaue to all descendent compo */}
+    {/* responsible for  provding value to all descendent compo */}
     <userContext.Provider value="Divyansh">
       <compoContext.Provider value="Component context">
           <ContextComponentD/>
@@ -166,4 +179,4 @@ function App() { // functional component, dumb,
 
 export default App;
 
-export {userContext, compoContext}
+export {userContext, compoContext, countContext}
